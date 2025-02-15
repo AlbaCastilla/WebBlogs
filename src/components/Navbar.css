@@ -1,0 +1,88 @@
+/* Estilo del navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 0.5rem 2rem; /* Reducido el padding para hacerlo más fino */
+    position: fixed; /* Fija el navbar en la parte superior */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Asegura que el navbar esté por encima de otros elementos */
+  }
+  
+  .logo {
+    color: white;
+    font-size: 1.5rem; /* Ajusta el tamaño del texto */
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+  
+  .nav-links li a:hover {
+    color: #ffcc00;
+  }
+  
+  /* Menú responsive */
+  .menu-icon {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .menu-icon .bar {
+    width: 25px;
+    height: 4px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s;
+  }
+  
+  /* Estilo cuando el menú hamburguesa está activo */
+  .nav-links.active {
+    display: block;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    padding: 1rem;
+  }
+  
+  .nav-links.active ul {
+    display: block;
+    text-align: center;
+  }
+  
+  .nav-links.active li {
+    margin: 1rem 0;
+  }
+  
+  .nav-links.active {
+    display: block; /* Muestra el menú cuando la clase 'active' está presente */
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none; /* Oculta el menú en pantallas pequeñas por defecto */
+    }
+  
+    .menu-icon {
+      display: block; /* Muestra el ícono hamburguesa */
+    }
+  }
