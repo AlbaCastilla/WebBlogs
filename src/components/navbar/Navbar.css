@@ -1,20 +1,20 @@
-/* Estilo del navbar */
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #333;
-    padding: 0.5rem 2rem; /* Reducido el padding para hacerlo más fino */
-    position: fixed; /* Fija el navbar en la parte superior */
+    padding: 0.5rem 2rem; 
+    position: fixed; 
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000; /* Asegura que el navbar esté por encima de otros elementos */
+    z-index: 1000;
   }
   
   .logo {
     color: white;
-    font-size: 1.5rem; /* Ajusta el tamaño del texto */
+    font-size: 1.5rem; 
     font-weight: bold;
   }
   
@@ -74,7 +74,7 @@
   }
   
   .nav-links.active {
-    display: block; /* Muestra el menú cuando la clase 'active' está presente */
+    display: block; 
   }
   
   @media (max-width: 768px) {
