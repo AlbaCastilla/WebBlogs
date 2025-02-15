@@ -1,0 +1,43 @@
+/* src/pages/Home.css */
+
+/* Aseguramos que el body y html ocupen toda la altura de la pantalla */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; 
+    width: 100%;
+}
+
+.divPrincipal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;  /* Esto asegura que el div principal ocupe toda la altura de la pantalla */
+    padding: 20px;
+    background-color: yellow;  /* Color de fondo amarillo */
+    box-sizing: border-box;
+}
+
+.h2 {
+    font-size: 2.5rem;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.p {
+    font-size: 1.2rem;
+    color: gray;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .h2 {
+        font-size: 2rem;
+    }
+
+    .p {
+        font-size: 1rem;
+    }
+}
