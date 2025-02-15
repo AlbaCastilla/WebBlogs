@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <h1 className="logo">Mi Blog</h1>
+      <h1 className="logo">Blog de blogs</h1>
       {/* menu-icon = Icono de menú hamburguesa n pantallas pequeñas */}
       <div className="menu-icon" onClick={toggleMenu}>
         <div className="bar"></div>
