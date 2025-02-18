@@ -1,76 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'; //con esto manejamos el estado del contenido
 import './Post.css';
 
 const Post = () => {
   const [titulo, setTitulo] = useState('');
-  const [subtitulo, setSubtitulo] = useState('');
-  const [texto, setTexto] = useState('');
+  const [texto, setTexto] = useState(''); //comienza vacio - sin valor
+  /*aqui almacenamos el contenido de lo que el usuario escriba*/
 
-  // Función para manejar el cambio de tamaño automático de los textarea
-  const handleAutoResize = (e) => {
-    e.target.style.height = 'auto'; // Restablecer la altura
-    e.target.style.height = `${e.target.scrollHeight}px`; // Ajustar altura al contenido
+  const handleTitleInput = (e) => {
+    setTitulo(e.target.innerText)
+  }
+  const handleInput = (e) => {
+    setTexto(e.target.innerText);
+    //con esto hacemos q lo escrito se guarde en setTexto (estado)
   };
 
-  // Función para manejar el envío del formulario
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const postData = {
-      titulo,
-      subtitulo,
-      texto,
-      fechaHora: new Date().toLocaleString(),
-    };
-
-    // Lógica para guardar los datos (aquí solo los mostramos)
-    console.log('Datos enviados:', postData);
-  };
 
   return (
     <div className="post">
-      <h2>Crear un Post</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="titulo">Título:</label>
-          <input
-            type="text"
-            id="titulo"
-            value={titulo}
-            onChange={(e) => setTitulo(e.target.value)}
-            required
-          />
-        </div>
+      <div 
+        className="titulo-editable"
+        contentEditable
+        onInput={handleTitleInput}
+        suppressContentEditableWarning={true}
+        data-placeholder="Título"
+        ></div>
+      <div 
+        className="editable" 
+        contentEditable //area de texto editable
+        onInput={handleInput} //actualizamos estado
+        suppressContentEditableWarning={true}
+        data-placeholder="Escribe aquí..."
+      ></div>
 
-        <div className="form-group">
-          <label htmlFor="subtitulo">Subtítulo:</label>
-          <input
-            type="text"
-            id="subtitulo"
-            value={subtitulo}
-            onChange={(e) => setSubtitulo(e.target.value)}
-            onInput={handleAutoResize}  // Ajustar tamaño automáticamente
-            required
-          />
-        </div>
+      <button type="submit">Publicar</button>
 
-        <div className="form-group">
-          <label htmlFor="texto">Texto:</label>
-          <textarea
-            id="texto"
-            value={texto}
-            onChange={(e) => setTexto(e.target.value)}
-            onInput={handleAutoResize}  // Ajustar tamaño automáticamente
-            required
-          ></textarea>
-        </div>
-
-        <button type="submit">Publicar</button>
-      </form>
     </div>
   );
 };
-
-{/*ACORDARSE DE AL HACER LA LÓGICA DE METER USUARIO, DATE-TIME Y SECCION */}
 
 export default Post;

@@ -1,5 +1,5 @@
 .post {
-    background-color: #2C2F36;
+    background-color: #333333;
     border-radius: 8px;
     padding: 20px;
     max-width: 750px;
@@ -8,49 +8,28 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    font-weight: bold;
-    color: #A1A1A1;
-    margin-bottom: 8px;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #555;
-    border-radius: 4px;
-    font-size: 1rem;
-    margin-top: 5px;
-    background-color: #434A52;
-    color: #F5F5F5;
-    box-sizing: border-box;
-}
-
-.form-group textarea {
-    min-height: 120px;
-    height: auto;
-    overflow: hidden;
-}
-
-button {
-    background-color: #FFCC00;
+.titulo-editable, .editable {
+    min-height: 40px;
+    padding: 8px;
+    font-size: 1.5rem;
     color: white;
+    outline: none; /* Evita el borde al hacer clic */
     border: none;
-    padding: 12px 24px;
-    font-size: 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 15px;
-    transition: background-color 0.3s ease;
+    background-color: transparent;
+    caret-color: rgb(179, 185, 205);
+    white-space: pre-wrap;
+    position: relative;
 }
-
+.editable {
+    font-size: 1.2rem;
+}
+[contentEditable]:empty:before {
+    content: attr(data-placeholder);
+    color: gray;
+    position: absolute;
+    pointer-events: none;
+    font-weight: 600;
+} 
 button:hover {
     background-color: #E0B400;
 }
