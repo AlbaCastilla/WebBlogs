@@ -1,6 +1,5 @@
 
 import React from 'react';
-import PostForm from '../components/post/PostForm.jsx';
 //import './pages.css';
 
 const Home = () => {
@@ -9,7 +8,7 @@ const Home = () => {
       <h2 className='h2'>Bienvenido a la Página de Inicio</h2>
       <p className='p'>Esta es la sección principal Home</p>
     
-      <PostForm />
+      {/* <PostForm /> */}
     </div>
   );
 };

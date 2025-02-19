@@ -4,6 +4,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar.jsx';
 import Home from './pages/Home';
+import Blogs from './pages/Blogs';
 import Viajes from './pages/Viajes.jsx';
 import Comida from './pages/Comida';
 import DayInMyLife from './pages/DayInMyLife';
@@ -20,6 +21,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/crear-blogs" element={<Blogs />} />
           <Route path="/viajes" element={<Viajes />} />
           <Route path="/comida" element={<Comida />} />
           <Route path="/day-in-my-life" element={<DayInMyLife />} />
