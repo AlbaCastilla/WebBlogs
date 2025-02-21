@@ -26,6 +26,7 @@ const Navbar = () => {
         <ul>
           {/*<Link> <Link/> actua como un <a><a/>*/}
           <li><Link to="/">Home</Link></li>
+          <li><Link to="/crear-blogs">Blogs</Link></li>
           <li><Link to="/viajes">Viajes</Link></li>
           <li><Link to="/comida">Comida</Link></li>
           <li><Link to="/day-in-my-life">Day in my life</Link></li>
