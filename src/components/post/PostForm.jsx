@@ -3,11 +3,15 @@ import './Post.css';
 
 const Post = () => {
   const [titulo, setTitulo] = useState('');
+  const [subtitulo, setSubtitulo]= useState('');
   const [texto, setTexto] = useState(''); //comienza vacio - sin valor
   /*aqui almacenamos el contenido de lo que el usuario escriba*/
 
   const handleTitleInput = (e) => {
     setTitulo(e.target.innerText)
+  }
+  const handleSubtitleInput = (e) => {
+    setSubtitulo(e.target.innerText)
   }
   const handleInput = (e) => {
     setTexto(e.target.innerText);
@@ -19,6 +23,13 @@ const Post = () => {
     <div className="post">
       <div 
         className="titulo-editable"
+        contentEditable
+        onInput={handleTitleInput}
+        suppressContentEditableWarning={true}
+        data-placeholder="Título"
+        ></div>
+        <div 
+        className="subtitulo-editable"
         contentEditable
         onInput={handleTitleInput}
         suppressContentEditableWarning={true}
