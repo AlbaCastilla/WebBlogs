@@ -8,6 +8,7 @@ import Blogs from './pages/Blogs';
 import Viajes from './pages/Viajes.jsx';
 import Comida from './pages/Comida';
 import Registro from './pages/Registro';
+import Login from './pages/Login';
 import DayInMyLife from './pages/DayInMyLife';
 import Otros from './pages/Otros.jsx';
 import Footer from './components/footer/Footer.jsx';
@@ -28,6 +29,7 @@ function App() {
           <Route path="/day-in-my-life" element={<DayInMyLife />} />
           <Route path="/otros" element={<Otros />} />
           <Route path="/registro" element={<Registro />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </Router>
       <Footer /> 
