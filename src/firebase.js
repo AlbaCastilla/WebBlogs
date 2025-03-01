@@ -8,4 +8,4 @@ const app = initializeApp(firebaseConfig);
 /* const auth = getAuth(app); SI QUEREMOS EL AUTENTICATION -- tendriamos q importarlo arriba */
 const db = getFirestore(app);
 
-export { db, storage };
+export { db };

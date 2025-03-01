@@ -8,7 +8,8 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.titulo-editable, .editable {
+.titulo-editable, 
+.editable {
     min-height: 40px;
     padding: 8px;
     font-size: 1.5rem;
@@ -20,6 +21,18 @@
     white-space: pre-wrap;
     position: relative;
 }
+
+.subtitulo-editable{
+
+    padding: 8px;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: lighter;
+    color: white;
+    outline: none; /* Evita el borde al hacer clic */
+    border: none;
+}
+
 .editable {
     font-size: 1.2rem;
 }
