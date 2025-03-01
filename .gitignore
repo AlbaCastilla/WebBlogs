@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+# configuracion de nuestro proyecto en firebase
+src/environments/environments.firebase.js
