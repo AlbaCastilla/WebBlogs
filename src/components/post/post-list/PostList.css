@@ -17,10 +17,10 @@
     border-left: 5px solid #6a5acd;
 }
 
-.post-list:hover {
+/* .post-list:hover {
     transform: scale(1.02);
     background-color: #e8e8ff;
-}
+} */
 
 .post-list h3 {
     font-size: 1.5rem;
