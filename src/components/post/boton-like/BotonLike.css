@@ -1,0 +1,43 @@
+.boton-like {
+    padding: 5px 10px;
+    border: 2px solid #9b9def;
+    background-color: #c3c4f5;
+    color: #ffffff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.4s ease;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+.boton-like::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   /*  background: radial-gradient(circle,
+            rgba(255, 255, 255, 0.25) 0%,
+            rgba(255, 255, 255, 0) 70%); */
+    outline: none;
+    border: none;
+    transform: scale(0);
+    transition: transform 0.5s ease;
+}
+
+.boton-like:hover::after {
+    transform: scale(4);
+    outline: none;
+    border: none;
+}
+
+.boton-like:hover {
+    border-color: #9b9def;
+    background: #695ACD;
+    outline: none; 
+    
+}

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { db } from "../../../firebase";
 import { collection, getDocs } from "firebase/firestore";
 import './PostList.css'
+import BotonLike from "../boton-like/BotonLike";
 
 /* lo iniciamos vacio, pq al principio no hay -- los cargamos con 
 setPOST ---> useState para actualizar el "valor" o el "estado" en el 
@@ -35,6 +36,7 @@ const PostList = () => {
                         <p>{post.texto}</p>
                         {/* transformar la fecha en texto legible */}
                         <small>{new Date(post.fechaCreacion?.seconds * 1000).toLocaleString()}</small>
+                        <BotonLike />
                     </div>
                 ))
             )}
