@@ -1,0 +1,24 @@
+/* Estilo para el contenedor del formulario */
+.form-div {
+    display: none;
+  }
+  
+  .show-login {
+    display: block;
+  }
+  
+  .show-register {
+    display: block;
+  }
+  
+  /* Estilo adicional para el span */
+  .registro-div span {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .registro-div span:hover {
+    color: darkblue;
+  }
+  
