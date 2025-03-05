@@ -26,3 +26,4 @@ dist-ssr
 
 # configuracion de nuestro proyecto en firebase
 src/environments/environments.firebase.js
+src/environments/environments.firebase.ts
