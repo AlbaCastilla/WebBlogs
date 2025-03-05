@@ -50,10 +50,7 @@ const Navbar = () => {
   const { isAuthenticated, logout } = useAuth();
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    logout();
-    navigate('/login'); // Redirigir al login después de cerrar sesión
-  };
+
 
   return (
     <nav>
@@ -72,8 +69,10 @@ const Navbar = () => {
         <li><Link to="/day-in-my-life">Day in my life</Link></li>
         <li><Link to="/otros">Otros</Link></li>
 
+        {/*onClick={handleLogout} */}
         {isAuthenticated ? (
-          <li onClick={handleLogout} style={{ cursor: 'pointer' }}>Logout</li>
+          
+          <li><Link to="/perfil">Perfil</Link></li>
         ) : (
           <li><Link to="/login">Login</Link></li>
         )}
