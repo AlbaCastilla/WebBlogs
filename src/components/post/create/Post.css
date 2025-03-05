@@ -45,9 +45,6 @@
     pointer-events: none;
     font-weight: 600;
 } 
-button:hover {
-    background-color: #E0B400;
-}
 
 .select-seccion {
     width: 100%;

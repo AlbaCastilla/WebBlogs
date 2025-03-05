@@ -49,22 +49,27 @@
 
 import React, { useState } from 'react';
 import { auth } from '../../environments/environments.firebase'; 
-import { signInWithEmailAndPassword  } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext'; // Importamos el contexto
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const { login } = useAuth(); // Usamos la función login del contexto
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     setError('');
 
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      alert('¡Inicio de sesión exitoso!');
-      setEmail('');
-      setPassword('');
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      login(user.accessToken); // Llamamos a login del contexto
+      navigate('/'); // Redirigir al home
     } catch (err) {
       setError('Error al iniciar sesión: ' + err.message);
     }
