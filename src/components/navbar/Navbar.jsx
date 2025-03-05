@@ -66,6 +66,7 @@
          <li><Link to="/comida">Comida</Link></li>
          <li><Link to="/day-in-my-life">Day in my life</Link></li>
          <li><Link to="/otros">Otros</Link></li>
+         <li><Link to="/registro">Registro</Link></li>
          <li><Link to="/login">Login</Link></li>
        </ul>
        <div className={`hamburger ${isMenuOpen ? 'hamburger-active' : ''}`} onClick={toggleMenu}>
