@@ -12,6 +12,7 @@ import Login from './pages/login/Login.jsx';
 import DayInMyLife from './pages/dayinmylife/DayInMyLife.jsx';
 import Otros from './pages/otros/Otros.jsx';
 import Footer from './components/footer/Footer.jsx';
+import Perfil from './pages/perfil/Perfil.jsx';
 import { AuthProvider } from './context/AuthContext'; // Importamos el contexto
 
 
@@ -32,6 +33,7 @@ function App() {
             <Route path="/otros" element={<Otros />} />
             <Route path="/registro" element={<Registro />} />
             <Route path="/login" element={<Login />} />
+            <Route path='/perfil' element={<Perfil/>}></Route>
           </Routes>
         </Router>
       </AuthProvider>
