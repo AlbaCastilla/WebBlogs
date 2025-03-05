@@ -29,12 +29,11 @@ function PostComida() {
 
     return (
         <div className="post-comida-container">
-            <h2>Posts de Comida</h2>
             {posts.length === 0 ? (
                 <p>No hay posts de comida aún</p>
             ) : (
                 posts.map((post) => (
-                    <div key={post.id} className="post-list">
+                    <div key={post.id} className="postComida-list">
                         <h3>{post.titulo}</h3>
                         <h4>{post.subtitulo}</h4>
                         <p>{post.texto}</p>
