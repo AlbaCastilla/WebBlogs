@@ -41,22 +41,27 @@
   font-size: 1.5rem;
 }
 
-/* Contenedor de descripción con disposición en fila */
+.contenedor-mediano {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 20px;
+  width: 100%;
+  height: auto;
+  background: white;
+  padding: 40px;
+  margin-top: 5%;
+  border-radius: 20px;
+  text-align: left;
+  margin-left: 0;
+}
+
+
+/* Contenedor de la descripción */
 .descripcion-contenedor {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 90%;
-    max-width: 750px;
-    height: auto;
-    background: white;
-    padding: 40px;
-    margin-top: 5%;
-    border-radius: 20px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    text-align: left;
-    border: 3px solid black;
-    margin-left: -30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
 }
 
 /* Imagen dentro de la descripción */
@@ -88,6 +93,20 @@
   line-height: 1.6; /* Espaciado para mayor legibilidad */
 }
 
+/* Contenedor de contadores */
 .contadores-contenedor {
-    border: 2px solid black;
+  display: flex;
+  justify-content: center; /* Centra el contenido del contenedor */
+  align-items: center; /* Centra verticalmente el contenido */
+}
+
+/* Contenedor de contadores */
+.contadores {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contador-post {
+  margin: 0;
 }

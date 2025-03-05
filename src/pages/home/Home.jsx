@@ -16,21 +16,24 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="descripcion-contenedor">
-        <img src={imagenFondo2} alt="Descripción" className="descripcion-imagen" />
-        <div className="descripcion-titulo">
-          <h2>¿De qué trata esta página?</h2>
-          <p>Este es un sitio donde los usuarios pueden compartir sus blogs, descubrir nuevas historias y conectar con otros escritores. esto es para comprobar como de bonito queda el texto en el contenedor porque para mi parece que esta todo gigante </p>
-        </div>
-      </div>
+        <div className="contenedor-mediano">
+          <div className="descripcion-contenedor">
+            <img src={imagenFondo2} alt="Descripción" className="descripcion-imagen" />
+            <div className="descripcion-titulo">
+              <h2>¿De qué trata esta página?</h2>
+              <p>Este es un sitio donde los usuarios pueden compartir sus blogs, descubrir nuevas historias y conectar con otros escritores. Esto es para comprobar como de bonito queda el texto en el contenedor porque para mí parece que está todo gigante.</p>
+            </div>
+          </div>
 
-      <div className="contadores-contenedor">
-        <div className="contadores">
-          <div className="contador-post">
-            <ContadorPost/>
+          <div className="contadores-contenedor">
+            <div className="contadores">
+              <div className="contador-post">
+                <ContadorPost />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+
 
 
       <PostsList />
