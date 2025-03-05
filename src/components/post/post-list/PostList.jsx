@@ -26,7 +26,7 @@ const PostList = () => {
 
     return (
         <div>
-            <h2>Lista de Posts</h2>
+            <h2 className="lista-post"> Lista de Posts</h2>
             
             {posts.length === 0 ? (<p>No hay posts aún</p>) : (
                 posts.map((post) => (

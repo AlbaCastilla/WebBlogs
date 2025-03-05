@@ -20,9 +20,9 @@ function ContadorPost() {
 
   useEffect(() => {
 
-    const postsViajes = collection(db, "posts");
+    const postsComida = collection(db, "posts");
 
-    onSnapshot(postsViajes, (snapshot) => {
+    onSnapshot(postsComida, (snapshot) => {
       const filteredPostsComida = snapshot.docs.filter((doc) => doc.data().seccion === "comida");
       setTotalPostsComida(filteredPostsComida.length);
     });
@@ -33,11 +33,24 @@ function ContadorPost() {
 
   useEffect(() => {
 
-    const postsViajes = collection(db, "posts");
+    const postsDiml = collection(db, "posts");
 
-    onSnapshot(postsViajes, (snapshot) => {
+    onSnapshot(postsDiml, (snapshot) => {
       const filteredPostsDiml = snapshot.docs.filter((doc) => doc.data().seccion === "diml");
       setTotalPostsDiml(filteredPostsDiml.length);
+    });
+
+  }, []);
+
+  const [totalPostsOtro, setTotalPostsOtro] = useState(0);
+
+  useEffect(() => {
+
+    const postsOtro = collection(db, "posts");
+
+    onSnapshot(postsOtro, (snapshot) => {
+      const filteredPostsOtro = snapshot.docs.filter((doc) => doc.data().seccion === "otro");
+      setTotalPostsOtro(filteredPostsOtro.length);
     });
 
   }, []);
@@ -47,10 +60,10 @@ function ContadorPost() {
   return (
     <div className="contador-posts">
         <h2>Contadores de los Posts</h2>
-      <h3>Total de Posts de Viajes {totalPostsViajes}</h3>
-      <h3>Total de Posts de Comida {totalPostsComida}</h3>
-      <h3>Total de Posts de Day in my Life {totalPostsDiml}</h3>
-
+      <h3>Total de Posts de Viajes: {totalPostsViajes}</h3>
+      <h3>Total de Posts de Comida: {totalPostsComida}</h3>
+      <h3>Total de Posts de Day in my Life: {totalPostsDiml}</h3>
+      <h3>Total de Posts de Otro: {totalPostsOtro}</h3>
     </div>
   );
 }

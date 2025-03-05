@@ -47,7 +47,7 @@
     align-items: center;
     justify-content: space-between;
     width: 90%;
-    max-width: 1050px;
+    max-width: 750px;
     height: auto;
     background: white;
     padding: 40px;
@@ -77,13 +77,13 @@
 
 /* Estilos del título */
 .descripcion-titulo h2 {
-  font-size: 2.2rem; /* Más grande */
+  font-size: 1.2rem; /* Más grande */
   margin-bottom: 20px;
 }
 
 /* Estilos del párrafo */
 .descripcion-titulo p {
-  font-size: 1.3rem; /* Aumenta el tamaño */
+  font-size: 0.8rem; /* Aumenta el tamaño */
   color: #333;
   line-height: 1.6; /* Espaciado para mayor legibilidad */
 }
