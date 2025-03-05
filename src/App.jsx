@@ -12,6 +12,7 @@ import Login from './pages/login/Login.jsx';
 import DayInMyLife from './pages/dayinmylife/DayInMyLife.jsx';
 import Otros from './pages/otros/Otros.jsx';
 import Footer from './components/footer/Footer.jsx';
+import { AuthProvider } from './context/AuthContext'; // Importamos el contexto
 
 
 import './App.css';
@@ -19,19 +20,21 @@ import './App.css';
 function App() {
   return (
     <div>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/crear-blogs" element={<Blogs />} />
-          <Route path="/viajes" element={<Viajes />} />
-          <Route path="/comida" element={<Comida />} />
-          <Route path="/day-in-my-life" element={<DayInMyLife />} />
-          <Route path="/otros" element={<Otros />} />
-          <Route path="/registro" element={<Registro />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
-      </Router>
+      <AuthProvider> 
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/crear-blogs" element={<Blogs />} />
+            <Route path="/viajes" element={<Viajes />} />
+            <Route path="/comida" element={<Comida />} />
+            <Route path="/day-in-my-life" element={<DayInMyLife />} />
+            <Route path="/otros" element={<Otros />} />
+            <Route path="/registro" element={<Registro />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </Router>
+      </AuthProvider>
       <Footer /> 
       {/* he sacado el footer del router pq no se 
       como hacer que se ajuste al ancho de la pantalla 
