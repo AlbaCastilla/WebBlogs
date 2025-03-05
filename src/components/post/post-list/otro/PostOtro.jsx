@@ -28,13 +28,12 @@ function PostOtro() {
     }, []);
 
     return (
-        <div className="post-viajes-container">
-            <h2>Posts de Otro</h2>
+        <div className="post-otros-container">
             {posts.length === 0 ? (
                 <p>No hay posts de otro aún</p>
             ) : (
                 posts.map((post) => (
-                    <div key={post.id} className="post-list">
+                    <div key={post.id} className="postOtro-list">
                         <h3>{post.titulo}</h3>
                         <h4>{post.subtitulo}</h4>
                         <p>{post.texto}</p>

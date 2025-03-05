@@ -28,13 +28,12 @@ function Diml() {
     }, []);
 
     return (
-        <div className="post-viajes-container">
-            <h2>Posts de Day in my life</h2>
+        <div className="post-diml-container">
             {posts.length === 0 ? (
                 <p>No hay posts de day in my life aún</p>
             ) : (
                 posts.map((post) => (
-                    <div key={post.id} className="post-list">
+                    <div key={post.id} className="postDiml-list">
                         <h3>{post.titulo}</h3>
                         <h4>{post.subtitulo}</h4>
                         <p>{post.texto}</p>
