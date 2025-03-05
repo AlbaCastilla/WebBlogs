@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { db } from '../../firebase';
 import { collection, onSnapshot } from 'firebase/firestore';
+import './ContadorPost.css'
 
 function ContadorPost() {
   const [totalPostsViajes, setTotalPostsViajes] = useState(0);
@@ -59,11 +60,13 @@ function ContadorPost() {
 
   return (
     <div className="contador-posts">
-        <h2>Contadores de los Posts</h2>
-      <h3>Total de Posts de Viajes: {totalPostsViajes}</h3>
-      <h3>Total de Posts de Comida: {totalPostsComida}</h3>
-      <h3>Total de Posts de Day in my Life: {totalPostsDiml}</h3>
-      <h3>Total de Posts de Otro: {totalPostsOtro}</h3>
+      <h2>Contadores de los Posts</h2>
+      <div className="contador-grid">
+        <div className="tarjeta-contador">Total de Posts de Viajes: {totalPostsViajes}</div>
+        <div className="tarjeta-contador">Total de Posts de Comida: {totalPostsComida}</div>
+        <div className="tarjeta-contador">Total de Posts de Diml: {totalPostsDiml}</div>
+        <div className="tarjeta-contador">Total de Posts de Otro: {totalPostsOtro}</div>
+      </div>
     </div>
   );
 }
