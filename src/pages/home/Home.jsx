@@ -29,9 +29,6 @@ const Home = () => {
           <div className="contador-post">
             <ContadorPost/>
           </div>
-          <div className="contador-usuarios">
-            <h3>Usuarios</h3>
-          </div>
         </div>
       </div>
 

@@ -16,9 +16,41 @@ function ContadorPost() {
 
   }, []);
 
+  const [totalPostsComida, setTotalPostsComida] = useState(0);
+
+  useEffect(() => {
+
+    const postsViajes = collection(db, "posts");
+
+    onSnapshot(postsViajes, (snapshot) => {
+      const filteredPostsComida = snapshot.docs.filter((doc) => doc.data().seccion === "comida");
+      setTotalPostsComida(filteredPostsComida.length);
+    });
+
+  }, []);
+
+  const [totalPostsDiml, setTotalPostsDiml] = useState(0);
+
+  useEffect(() => {
+
+    const postsViajes = collection(db, "posts");
+
+    onSnapshot(postsViajes, (snapshot) => {
+      const filteredPostsDiml = snapshot.docs.filter((doc) => doc.data().seccion === "diml");
+      setTotalPostsDiml(filteredPostsDiml.length);
+    });
+
+  }, []);
+
+
+
   return (
     <div className="contador-posts">
-      <h2>Total de Posts de Viajes {totalPostsViajes}</h2>
+        <h2>Contadores de los Posts</h2>
+      <h3>Total de Posts de Viajes {totalPostsViajes}</h3>
+      <h3>Total de Posts de Comida {totalPostsComida}</h3>
+      <h3>Total de Posts de Day in my Life {totalPostsDiml}</h3>
+
     </div>
   );
 }
