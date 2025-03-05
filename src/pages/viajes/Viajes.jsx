@@ -1,6 +1,6 @@
 
 import React from 'react';
-import PostViajes from '../components/post/post-list/viajes/PostViajes'
+import PostViajes from '../../components/post/post-list/viajes/PostViajes'
 
 const Viajes = () => {
   return (

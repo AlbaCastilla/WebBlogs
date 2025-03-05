@@ -1,6 +1,6 @@
 
 import React from 'react';
-import PostComida from '../components/post/post-list/comida/PostComida';
+import PostComida from '../../components/post/post-list/comida/PostComida';
 
 const Comida = () => {
   return (

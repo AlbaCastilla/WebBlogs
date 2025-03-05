@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { db } from "../../../../firebase";
 import { collection, getDocs } from "firebase/firestore";
-import "./PostDiml.css";
+import "./PostOtro.css";
 import BotonLike from "../../boton-like/BotonLike";
 
-function Diml() {
+function PostOtro() {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
@@ -16,7 +16,7 @@ function Diml() {
                         id: doc.id,
                         ...doc.data(),
                     }))
-                    .filter((post) => post.seccion === "diml"); 
+                    .filter((post) => post.seccion === "otro"); 
 
                 setPosts(postsArray);
             } catch (error) {
@@ -29,9 +29,9 @@ function Diml() {
 
     return (
         <div className="post-viajes-container">
-            <h2>Posts de Day in my life</h2>
+            <h2>Posts de Otro</h2>
             {posts.length === 0 ? (
-                <p>No hay posts de day in my life aún</p>
+                <p>No hay posts de otro aún</p>
             ) : (
                 posts.map((post) => (
                     <div key={post.id} className="post-list">
@@ -47,4 +47,4 @@ function Diml() {
     );
 }
 
-export default Diml
+export default PostOtro

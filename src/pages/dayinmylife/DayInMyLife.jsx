@@ -1,5 +1,5 @@
 import React from 'react';
-import PostDiml from '../components/post/post-list/diml/PostDiml';
+import PostDiml from '../../components/post/post-list/diml/PostDiml';
 
 const DayInMyLife = () => {
   return (

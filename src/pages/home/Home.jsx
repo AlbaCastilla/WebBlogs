@@ -1,4 +1,4 @@
-import PostsList from "../components/post/post-list/PostList";
+import PostsList from "../../components/post/post-list/PostList";
 //import './pages.css';
 
 const Home = () => {
@@ -7,7 +7,6 @@ const Home = () => {
       <h2 className='h2'>Bienvenido a la Página de Inicio</h2>
       <p className='p'>Esta es la sección principal Home</p>
     
-      {/* <PostForm /> */}
       <PostsList />
     </div>
   );

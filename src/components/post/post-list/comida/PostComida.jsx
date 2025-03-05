@@ -31,7 +31,7 @@ function PostComida() {
         <div className="post-comida-container">
             <h2>Posts de Comida</h2>
             {posts.length === 0 ? (
-                <p>No hay posts de viajes aún</p>
+                <p>No hay posts de comida aún</p>
             ) : (
                 posts.map((post) => (
                     <div key={post.id} className="post-list">

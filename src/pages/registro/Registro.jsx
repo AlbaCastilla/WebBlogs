@@ -1,4 +1,4 @@
-import RegistroForm from '../components/auth/RegistroForm.jsx';
+import RegistroForm from '../../components/auth/RegistroForm.jsx';
 
 const Registro = () => {
     return (
