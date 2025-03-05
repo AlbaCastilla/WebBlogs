@@ -3,14 +3,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar.jsx';
-import Home from './pages/Home';
-import Blogs from './pages/Blogs';
-import Viajes from './pages/Viajes.jsx';
-import Comida from './pages/Comida';
-import Registro from './pages/Registro';
-import Login from './pages/Login';
-import DayInMyLife from './pages/DayInMyLife';
-import Otros from './pages/Otros.jsx';
+import Home from './pages/home/Home.jsx';
+import Blogs from './pages/blog/Blogs.jsx';
+import Viajes from './pages/viajes/Viajes.jsx';
+import Comida from './pages/comida/Comida.jsx';
+import Registro from './pages/registro/Registro.jsx';
+import Login from './pages/login/Login.jsx';
+import DayInMyLife from './pages/dayinmylife/DayInMyLife.jsx';
+import Otros from './pages/otros/Otros.jsx';
 import Footer from './components/footer/Footer.jsx';
 
 

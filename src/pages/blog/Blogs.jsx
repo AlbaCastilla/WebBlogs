@@ -1,4 +1,4 @@
-import PostForm from '../components/post/create/PostForm.jsx';
+import PostForm from '../../components/post/create/PostForm.jsx';
 
 const Blogs = () => {
     return (

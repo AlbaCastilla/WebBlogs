@@ -73,8 +73,8 @@
   
 // export default Login;
 import React, { useState } from 'react';
-import LoginForm from '../components/auth/LoginForm.jsx';
-import RegistroForm from '../components/auth/RegistroForm.jsx'; // Asegúrate de tener el formulario de registro
+import LoginForm from '../../components/auth/LoginForm.jsx';
+import RegistroForm from '../../components/auth/RegistroForm.jsx'; // Asegúrate de tener el formulario de registro
 import './Login.css'; // Importa el archivo CSS aquí
 
 const Login = () => {

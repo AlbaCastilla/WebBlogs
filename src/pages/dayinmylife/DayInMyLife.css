@@ -1,0 +1,19 @@
+.titulo-diml h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-top: 1%;
+}
+
+.descripcion-diml p {
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-align: center;
+    color: #666; /* Un tono gris para no competir con el título */
+    letter-spacing: 1px;
+    margin-top: 5px; /* Espacio entre título y subtítulo */
+    font-style: italic;
+}
