@@ -25,9 +25,4 @@ dist-ssr
 
 
 # configuracion de nuestro proyecto en firebase
-<<<<<<< HEAD
-src/environments/environments.firebase.js
 src/environments/environments.firebase.ts
-=======
-# src/environments/environments.firebase.js
->>>>>>> b7e8130 (cambios para q funcione con el archivo environments.ts:))
