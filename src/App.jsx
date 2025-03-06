@@ -17,6 +17,7 @@ import { AuthProvider } from './context/AuthContext';
 import './App.css';
 import AgrandarPostDiml from './pages/agrandar/agrandar-post-diml/AgrandarPostDiml.jsx';
 import AgrandarPostComida from './pages/agrandar/agrandar-post-comida/AgrandarPostComida.jsx';
+import AgrandarPostViajes from './pages/agrandar/agrandar-post-viajes/AgrandarPostViajes.jsx';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
             <Route path="/post/:id" element={<AgrandarPost />} />
             <Route path="/post/:id" element={<AgrandarPostDiml/>}/>
             <Route path="/post/:id" element={<AgrandarPostComida/>}/>
+            <Route path="/post/:id" element={<AgrandarPostViajes/>}/>
 
           </Routes>
         </Router>
