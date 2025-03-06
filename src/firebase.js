@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { firebaseConfig } from "./environments/environments.firebase";
+import { firebaseConfig } from "./environments/environments.firebase.ts";
 
 
 

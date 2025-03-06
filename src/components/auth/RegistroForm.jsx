@@ -47,7 +47,7 @@
 // export default RegistroForm;
 
 import React, { useState } from 'react';
-import { auth } from '../../environments/environments.firebase'; 
+import { auth } from '../../environments/environments.firebase.ts'; 
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 const RegistroForm = () => {

@@ -1,25 +1,34 @@
-import React, { useState } from 'react'; //con esto manejamos el estado del contenido
+import React, { useState } from 'react'; 
 import { db } from "../../firebase"; //importamos Firestore desde firebase.js
-import { collection, addDoc, serverTimestamp }  from "firebase/firestore"; 
+import { collection, addDoc, serverTimestamp } from "firebase/firestore"; 
+import { useAuth } from '../../context/AuthContext'; // Importamos el hook de autenticación
+import { useNavigate } from 'react-router-dom'; // Importamos useNavigate
 import './Post.css';
 
 const Post = () => {
+  const { isAuthenticated } = useAuth(); // Usamos el hook de autenticación para saber si el usuario está logueado
   const [titulo, setTitulo] = useState('');
-  const [subtitulo, setSubtitulo]= useState('');
+  const [subtitulo, setSubtitulo] = useState('');
   const [texto, setTexto] = useState(''); //comienza vacio - sin valor
-  /*aqui almacenamos el contenido de lo que el usuario escriba*/
+  const navigate = useNavigate(); // Navegación
+
+  if (!isAuthenticated) {
+    // Si no está autenticado, redirigimos a la página de login
+    navigate('/login');
+    return null; // No renderizamos nada mientras redirige
+  }
 
   const handleTitleInput = (e) => {
     setTitulo(e.target.innerText)
   }
+
   const handleSubtitleInput = (e) => {
     setSubtitulo(e.target.innerText)
   }
-  const handleInput = (e) => {
-    setTexto(e.target.innerText);
-    //con esto hacemos q lo escrito se guarde en setTexto (estado)
-  };
 
+  const handleInput = (e) => {
+    setTexto(e.target.innerText); 
+  };
 
   const guardarPost = async () => {
     if (!titulo.trim() || !texto.trim()) {
@@ -28,8 +37,7 @@ const Post = () => {
     }
 
     try {
-
-      //con el await lo que hacemos es --> hasta q no se haya guardado no sigue con la siguiente accion
+      // Guardamos el post en Firebase
       await addDoc(collection(db, "posts"), {
         titulo,
         subtitulo,
@@ -39,7 +47,7 @@ const Post = () => {
 
       alert("Post guardado en Firebase!");
 
-      //limpiamos los cambios -- seteandolos a 0
+      // Limpiamos los campos después de guardar
       setTitulo("");
       setSubtitulo("");
       setTexto("");
@@ -51,33 +59,31 @@ const Post = () => {
 
   return (
     <div className="post">
-
       <div 
         className="titulo-editable"
         contentEditable
         onInput={handleTitleInput}
         suppressContentEditableWarning={true}
         data-placeholder="Título"
-        ></div>
+      ></div>
 
-        <div 
+      <div 
         className="subtitulo-editable"
         contentEditable
         onInput={handleSubtitleInput}
         suppressContentEditableWarning={true}
         data-placeholder="subtítulo"
-        ></div>
+      ></div>
 
       <div 
         className="editable" 
-        contentEditable //area de texto editable
-        onInput={handleInput} //actualizamos estado
+        contentEditable
+        onInput={handleInput} 
         suppressContentEditableWarning={true}
         data-placeholder="Escribe aquí..."
       ></div>
 
       <button type="submit" onClick={guardarPost}>Publicar</button>
-
     </div>
   );
 };

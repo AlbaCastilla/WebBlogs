@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { db } from "../../../../firebase";
 import { collection, getDocs } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 import "./PostComida.css";
 import BotonLike from "../../boton-like/BotonLike";
 
+
 function PostComida() {
     const [posts, setPosts] = useState([]);
+    const navigate = useNavigate(); 
 
     useEffect(() => {
         const obtenerPosts = async () => {
@@ -27,16 +30,21 @@ function PostComida() {
         obtenerPosts();
     }, []);
 
+    const handlePostClick = (id) => {
+        navigate(`/post/${id}`); 
+    };
+
+
     return (
         <div className="post-comida-container">
             {posts.length === 0 ? (
                 <p>No hay posts de comida aún</p>
             ) : (
                 posts.map((post) => (
-                    <div key={post.id} className="postComida-list">
+                    <div key={post.id} className="postComida-list" >
                         <h3>{post.titulo}</h3>
                         <h4>{post.subtitulo}</h4>
-                        <p>{post.texto}</p>
+                        <a onClick={() => handlePostClick(post.id)}>Ver más</a><br />
                         <small>{new Date(post.fechaCreacion?.seconds * 1000).toLocaleString()}</small>
                         <BotonLike />
                     </div>
