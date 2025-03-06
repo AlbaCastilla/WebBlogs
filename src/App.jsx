@@ -1,5 +1,3 @@
-
-//
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar.jsx';
@@ -11,11 +9,15 @@ import Registro from './pages/registro/Registro.jsx';
 import Login from './pages/login/Login.jsx';
 import DayInMyLife from './pages/dayinmylife/DayInMyLife.jsx';
 import Otros from './pages/otros/Otros.jsx';
+import AgrandarPost from './pages/agrandar/agrandar-post-otro/AgrandarPostOtro.jsx';
 import Footer from './components/footer/Footer.jsx';
-import { AuthProvider } from './context/AuthContext'; // Importamos el contexto
-
+import Perfil from './pages/perfil/Perfil.jsx';
+import { AuthProvider } from './context/AuthContext'; 
 
 import './App.css';
+import AgrandarPostDiml from './pages/agrandar/agrandar-post-diml/AgrandarPostDiml.jsx';
+import AgrandarPostComida from './pages/agrandar/agrandar-post-comida/AgrandarPostComida.jsx';
+import AgrandarPostViajes from './pages/agrandar/agrandar-post-viajes/AgrandarPostViajes.jsx';
 
 function App() {
   return (
@@ -32,13 +34,13 @@ function App() {
             <Route path="/otros" element={<Otros />} />
             <Route path="/registro" element={<Registro />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/perfil" element={<Perfil />} />
+            <Route path="/post/:id" element={<AgrandarPost />} />
+
           </Routes>
         </Router>
       </AuthProvider>
       <Footer /> 
-      {/* he sacado el footer del router pq no se 
-      como hacer que se ajuste al ancho de la pantalla 
-      pero antes estaba dentrp */}
     </div>
   );
 }
