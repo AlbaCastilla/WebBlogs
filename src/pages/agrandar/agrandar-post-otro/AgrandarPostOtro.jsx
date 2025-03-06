@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { db } from "../../../firebase";
 import { doc, getDoc } from "firebase/firestore";
-import "./AgrandarPost.css";
+import "./AgrandarPostOtro.css";
 
 function AgrandarPost() {
     const { id } = useParams(); // Obtiene el id de la URL

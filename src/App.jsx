@@ -9,12 +9,13 @@ import Registro from './pages/registro/Registro.jsx';
 import Login from './pages/login/Login.jsx';
 import DayInMyLife from './pages/dayinmylife/DayInMyLife.jsx';
 import Otros from './pages/otros/Otros.jsx';
-import AgrandarPost from './pages/agrandar/agrandar-post-otro/AgrandarPost.jsx';
+import AgrandarPost from './pages/agrandar/agrandar-post-otro/AgrandarPostOtro.jsx';
 import Footer from './components/footer/Footer.jsx';
 import Perfil from './pages/perfil/Perfil.jsx';
 import { AuthProvider } from './context/AuthContext'; 
 
 import './App.css';
+import AgrandarPostDiml from './pages/agrandar/agrandar-post-diml/AgrandarPostDiml.jsx';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/perfil" element={<Perfil />} />
             <Route path="/post/:id" element={<AgrandarPost />} /> {/* Nueva ruta */}
+            <Route path="/post/:id" element={<AgrandarPostDiml/>}></Route>
           </Routes>
         </Router>
       </AuthProvider>
