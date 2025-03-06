@@ -1,3 +1,14 @@
+.fondo-otro {
+  background-image: url("../../img/fondoOtro2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.fondo-blanco {
+  background: rgba(255, 255, 255, 0.5);
+}
+
 .titulo-otros h2 {
   font-size: 2rem;
   font-weight: bold;
@@ -5,7 +16,6 @@
   color: #444;
   text-transform: uppercase;
   letter-spacing: 4px;
-  margin-top: 1%;
 }
 
 .descripcion-otros p {

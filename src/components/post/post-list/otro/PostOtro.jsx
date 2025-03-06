@@ -42,7 +42,7 @@ function PostOtro() {
                     <div key={post.id} className="postOtro-list" onClick={() => handlePostClick(post.id)}>
                         <h3>{post.titulo}</h3>
                         <h4>{post.subtitulo}</h4>
-                        <p>{post.texto}</p>
+                        <a onClick={() => handlePostClick(post.id)}>Ver más</a><br />
                         <small>{new Date(post.fechaCreacion?.seconds * 1000).toLocaleString()}</small>
                         <BotonLike />
                     </div>
