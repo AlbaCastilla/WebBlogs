@@ -100,7 +100,7 @@ const RegistroForm = () => {
               required
             />
           </div>
-          <button className='btn-registro123' type="submit">Registrarse</button>
+          <button className='btn-registro' type="submit">Registrarse</button>
         </form>
       </div>
     </div>
