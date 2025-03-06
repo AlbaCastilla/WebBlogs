@@ -1,57 +1,9 @@
-// import React, { useState } from 'react';
-// import axios from 'axios';
-
-// const LoginForm = () => {
-//   const [username, setUsername] = useState('');
-//   const [password, setPassword] = useState('');
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-
-//     const credentials = { username, password };
-
-//     try {
-//       const response = await axios.post(
-//         'http://localhost:9000/api/login', 
-//         credentials,
-//         {
-//           headers: {
-//             'Content-Type': 'application/json', 
-//             'Accept': 'application/json'
-//           },
-//           withCredentials: true // ✅ Necesario para CORS y autenticación
-//         }
-//       );
-
-//       console.log('Login exitoso:', response.data);
-//       // Aquí puedes guardar el token en el estado global o en localStorage
-//     } catch (error) {
-//       console.error('Error en el login:', error);
-//     }
-//   };
-
-//   return (
-//     <form onSubmit={handleSubmit}>
-//       <div>
-//         <label>Username:</label>
-//         <input type="text" value={username} onChange={e => setUsername(e.target.value)} required />
-//       </div>
-//       <div>
-//         <label>Password:</label>
-//         <input type="password" value={password} onChange={e => setPassword(e.target.value)} required />
-//       </div>
-//       <button type="submit">Login</button>
-//     </form>
-//   );
-// };
-
-// export default LoginForm;
-
 import React, { useState } from 'react';
-import { auth } from '../../environments/environments.firebase'; 
+import { auth } from '../../environments/environments.firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext'; // Importamos el contexto
+import './LoginForm.css'
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -76,26 +28,34 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="login-container">
-      <h3>Iniciar Sesión</h3>
-      {error && <p className="error">{error}</p>}
-      <form onSubmit={handleLogin}>
-        <input
-          type="email"
-          placeholder="Correo electrónico"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Contraseña"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit">Iniciar Sesión</button>
-      </form>
+    <div className="contenedor-global">
+
+      <div className="login-container">
+        <h3>Iniciar Sesión</h3>
+        {error && <p className="error">{error}</p>}
+        <form className='formulario' onSubmit={handleLogin}>
+          <div className="inputs">
+            <input
+              className='input-email'
+              type="email"
+              placeholder="Correo electrónico"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <input
+              className='input-pass'
+              type="password"
+              placeholder="Contraseña"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+
+          <button className='btn' type="submit">Iniciar Sesión</button>
+        </form>
+      </div>
     </div>
   );
 };
