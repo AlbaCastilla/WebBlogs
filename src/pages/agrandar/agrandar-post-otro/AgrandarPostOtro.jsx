@@ -33,10 +33,12 @@ function AgrandarPost() {
 
     return (
         <div className="agrandar-post-container">
-            <h2>{post.titulo}</h2>
-            <h4>{post.subtitulo}</h4>
-            <p>{post.texto}</p>
-            <small>{new Date(post.fechaCreacion?.seconds * 1000).toLocaleString()}</small>
+            <div className="agrandar-post">
+                <h2>{post.titulo}</h2>
+                <h4>{post.subtitulo}</h4>
+                <p>{post.texto}</p>
+                <small>{new Date(post.fechaCreacion?.seconds * 1000).toLocaleString()}</small>
+            </div>
         </div>
     );
 }

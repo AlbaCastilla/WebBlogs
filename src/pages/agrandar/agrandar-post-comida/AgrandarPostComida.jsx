@@ -31,7 +31,7 @@ function AgrandarPostComida() {
     }
 
     return (
-        <div className="agrandar-post-container">
+        <div className="agrandar-post-container-comida">
             <h2>{post.titulo}</h2>
             <h4>{post.subtitulo}</h4>
             <p>{post.texto}</p>

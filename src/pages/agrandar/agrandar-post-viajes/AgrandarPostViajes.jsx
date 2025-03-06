@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { db } from "../../../firebase";
 import { doc, getDoc } from "firebase/firestore";
+import './AgrandarPostViajes.css'
 
 function AgrandarPostViajes() {
     const { id } = useParams(); 
@@ -31,11 +32,13 @@ function AgrandarPostViajes() {
     }
 
     return (
-        <div className="agrandar-post-container">
-            <h2>{post.titulo}</h2>
-            <h4>{post.subtitulo}</h4>
-            <p>{post.texto}</p>
-            <small>{new Date(post.fechaCreacion?.seconds * 1000).toLocaleString()}</small>
+        <div className="agrandar-post-container-viajes">
+            <div className="agrandar-post-viajes">
+                <h2>{post.titulo}</h2>
+                <h4>{post.subtitulo}</h4>
+                <p>{post.texto}</p>
+                <small>{new Date(post.fechaCreacion?.seconds * 1000).toLocaleString()}</small>
+            </div>
         </div>
     );
 }

@@ -32,7 +32,7 @@ function AgrandarPostDiml() {
     }
 
     return (
-        <div className="agrandar-post-container">
+        <div className="agrandar-post-container-diml">
             <h2>{post.titulo}</h2>
             <h4>{post.subtitulo}</h4>
             <p>{post.texto}</p>

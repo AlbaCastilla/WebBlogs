@@ -36,9 +36,6 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/perfil" element={<Perfil />} />
             <Route path="/post/:id" element={<AgrandarPost />} />
-            <Route path="/post/:id" element={<AgrandarPostDiml/>}/>
-            <Route path="/post/:id" element={<AgrandarPostComida/>}/>
-            <Route path="/post/:id" element={<AgrandarPostViajes/>}/>
 
           </Routes>
         </Router>
