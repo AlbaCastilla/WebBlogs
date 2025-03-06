@@ -5,14 +5,16 @@ import './Comida.css'
 
 const Comida = () => {
   return (
-    <div>
-      <div className="titulo-comida">
-        <h2>Bienvenido a la Página de Comida</h2>
-      </div>
-      <div className="descripcion-comida">
-        <p>Esta es la sección de posts de blogs de comida</p>
-      </div>
-      <PostComida/>
+    <div className='fondo'>
+      <div className='fondo-blanco'>
+        <div className="titulo-comida">
+          <h2>Bienvenido a la Página de Comida</h2>
+        </div>
+        <div className="descripcion-comida">
+          <p>Esta es la sección de posts de blogs de comida</p>
+        </div>
+        <PostComida/>
+        </div>
     </div>
   );
 };
