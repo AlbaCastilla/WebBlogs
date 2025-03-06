@@ -47,14 +47,8 @@
     white-space: normal;
 }
 
-.postOtro-list p {
-    font-size: 1rem;
-    color: #333;
-    line-height: 1.5;
-    margin-bottom: 15px;
-    word-wrap: break-word; /* Permite que las palabras largas se dividan */
-    overflow-wrap: break-word; /* Asegura que el texto no se desborde */
-    white-space: normal; /* Evita que el texto quede en una sola línea */
+.postOtro-list a {
+    cursor: pointer;
 }
 
 .postOtro-list small {
