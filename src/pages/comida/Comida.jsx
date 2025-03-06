@@ -5,7 +5,7 @@ import './Comida.css'
 
 const Comida = () => {
   return (
-    <div className='fondo'>
+    <div className='fondo-comida'>
       <div className='fondo-blanco'>
         <div className="titulo-comida">
           <h2>Bienvenido a la Página de Comida</h2>

@@ -4,7 +4,7 @@ import './DayInMyLife.css'
 
 const DayInMyLife = () => {
   return (
-    <div className='fondo'>
+    <div className='fondo-diml'>
       <div className="fondo-blanco">
         <div className="titulo-diml">
           <h2>Bienvenido a la Página de Day in my Life</h2>
