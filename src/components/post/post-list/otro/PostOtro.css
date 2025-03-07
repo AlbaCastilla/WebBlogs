@@ -16,7 +16,6 @@
     max-width: 600px;
     margin-bottom: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
 }
 
 .postOtro-list:hover {
@@ -49,6 +48,7 @@
 
 .postOtro-list a {
     cursor: pointer;
+    border: 2px solid black;
 }
 
 .postOtro-list small {

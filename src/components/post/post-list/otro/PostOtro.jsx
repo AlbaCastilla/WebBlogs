@@ -39,7 +39,7 @@ function PostOtro() {
                 <p>No hay posts de otro aún</p>
             ) : (
                 posts.map((post) => (
-                    <div key={post.id} className="postOtro-list" onClick={() => handlePostClick(post.id)}>
+                    <div key={post.id} className="postOtro-list">
                         <h3>{post.titulo}</h3>
                         <h4>{post.subtitulo}</h4>
                         <a onClick={() => handlePostClick(post.id)}>Ver más</a><br />
