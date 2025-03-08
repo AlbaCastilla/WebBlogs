@@ -17,3 +17,41 @@
     margin-top: 5px; /* Espacio entre título y subtítulo */
     font-style: italic;
 }
+.favoritos-container {
+    margin-top: 20px;
+    padding: 10px;
+  }
+  
+  .favoritos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .tarjeta {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .tarjeta:hover {
+    transform: scale(1.05);
+  }
+  
+  h4 {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  p {
+    color: #666;
+  }
+  
+  small {
+    color: #999;
+    font-size: 0.8rem;
+  }
+  

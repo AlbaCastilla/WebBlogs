@@ -48,7 +48,7 @@
 
 .postOtro-list a {
     cursor: pointer;
-    border: 2px solid black;
+    /*border: 2px solid black;*/
 }
 
 .postOtro-list small {
