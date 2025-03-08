@@ -35,7 +35,7 @@ function BotonLike({ postId, onLikeClick }) {
   };
 
   return (
-    <div>
+    <div className='div-btnLike'>
       <button
         className="boton-like"
         onClick={handleLike}

@@ -483,7 +483,7 @@ function PostComida() {
             <h4>{post.subtitulo}</h4>
             <a onClick={() => handlePostClick(post.id)}>Ver más</a><br />
             <small>{new Date(post.fechaCreacion?.seconds * 1000).toLocaleString()}</small>
-            <div>
+            <div className="divBtnLike">
               {/* El botón de like se renderiza siempre, pero solo se ejecuta si el usuario está autenticado */}
               <BotonLike postId={post.id} onLikeClick={handleLikeClick} />
             </div>
