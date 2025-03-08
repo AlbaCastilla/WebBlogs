@@ -15,9 +15,6 @@ import Perfil from './pages/perfil/Perfil.jsx';
 import { AuthProvider } from './context/AuthContext'; 
 
 import './App.css';
-import AgrandarPostDiml from './pages/agrandar/agrandar-post-diml/AgrandarPostDiml.jsx';
-import AgrandarPostComida from './pages/agrandar/agrandar-post-comida/AgrandarPostComida.jsx';
-import AgrandarPostViajes from './pages/agrandar/agrandar-post-viajes/AgrandarPostViajes.jsx';
 
 function App() {
   return (

@@ -1,57 +1,74 @@
 // import React, { useState } from 'react';
-// import axios from 'axios';
+// import { auth } from '../../environments/environments.firebase';
+// import { signInWithEmailAndPassword } from 'firebase/auth';
+// import { useNavigate } from 'react-router-dom';
+// import { useAuth } from '../../context/AuthContext'; // Importamos el contexto
+// import './LoginForm.css'
 
 // const LoginForm = () => {
-//   const [username, setUsername] = useState('');
+//   const [email, setEmail] = useState('');
 //   const [password, setPassword] = useState('');
+//   const [error, setError] = useState('');
+//   const { login } = useAuth(); // Usamos la función login del contexto
+//   const navigate = useNavigate();
 
-//   const handleSubmit = async (e) => {
+//   const handleLogin = async (e) => {
 //     e.preventDefault();
-
-//     const credentials = { username, password };
+//     setError('');
 
 //     try {
-//       const response = await axios.post(
-//         'http://localhost:9000/api/login', 
-//         credentials,
-//         {
-//           headers: {
-//             'Content-Type': 'application/json', 
-//             'Accept': 'application/json'
-//           },
-//           withCredentials: true // ✅ Necesario para CORS y autenticación
-//         }
-//       );
+//       const userCredential = await signInWithEmailAndPassword(auth, email, password);
+//       const user = userCredential.user;
 
-//       console.log('Login exitoso:', response.data);
-//       // Aquí puedes guardar el token en el estado global o en localStorage
-//     } catch (error) {
-//       console.error('Error en el login:', error);
+//       login(user.accessToken); // Llamamos a login del contexto
+//       navigate('/'); // Redirigir al home
+//     } catch (err) {
+//       setError('Error al iniciar sesión: ' + err.message);
 //     }
 //   };
 
 //   return (
-//     <form onSubmit={handleSubmit}>
-//       <div>
-//         <label>Username:</label>
-//         <input type="text" value={username} onChange={e => setUsername(e.target.value)} required />
+//     <div className="contenedor-global">
+
+//       <div className="login-container">
+//         <h3>Iniciar Sesión</h3>
+//         {error && <p className="error">{error}</p>}
+//         <form className='formulario' onSubmit={handleLogin}>
+//           <div className="inputs">
+//             <input
+//               className='input-email'
+//               type="email"
+//               placeholder="Correo electrónico"
+//               value={email}
+//               onChange={(e) => setEmail(e.target.value)}
+//               required
+//             />
+//             <input
+//               className='input-pass'
+//               type="password"
+//               placeholder="Contraseña"
+//               value={password}
+//               onChange={(e) => setPassword(e.target.value)}
+//               required
+//             />
+//           </div>
+
+//           <button className='btn' type="submit">Iniciar Sesión</button>
+//         </form>
 //       </div>
-//       <div>
-//         <label>Password:</label>
-//         <input type="password" value={password} onChange={e => setPassword(e.target.value)} required />
-//       </div>
-//       <button type="submit">Login</button>
-//     </form>
+//     </div>
 //   );
 // };
 
 // export default LoginForm;
 
+
 import React, { useState } from 'react';
-import { auth } from '../../environments/environments.firebase'; 
+import { auth } from '../../environments/environments.firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext'; // Importamos el contexto
+import './LoginForm.css'
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -70,32 +87,42 @@ const LoginForm = () => {
 
       login(user.accessToken); // Llamamos a login del contexto
       navigate('/'); // Redirigir al home
+
+      // Recargar la ventana después del login exitoso
+      window.location.reload(); // O usa navigate(0);
     } catch (err) {
       setError('Error al iniciar sesión: ' + err.message);
     }
   };
 
   return (
-    <div className="login-container">
-      <h3>Iniciar Sesión</h3>
-      {error && <p className="error">{error}</p>}
-      <form onSubmit={handleLogin}>
-        <input
-          type="email"
-          placeholder="Correo electrónico"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Contraseña"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit">Iniciar Sesión</button>
-      </form>
+    <div className="contenedor-global">
+      <div className="login-container">
+        <h3>Iniciar Sesión</h3>
+        {error && <p className="error">{error}</p>}
+        <form className='formulario' onSubmit={handleLogin}>
+          <div className="inputs">
+            <input
+              className='input-email'
+              type="email"
+              placeholder="Correo electrónico"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <input
+              className='input-pass'
+              type="password"
+              placeholder="Contraseña"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+
+          <button className='btn' type="submit">Iniciar Sesión</button>
+        </form>
+      </div>
     </div>
   );
 };
