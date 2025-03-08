@@ -4,61 +4,57 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 40px;
+    padding: 0 20px;
 }
 
 .agrandar-post {
-    background: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 50%;
-    max-width: 600px;
-    margin-bottom: 20px;
+    background: #ffffff; /* Fondo blanco */
+    border-radius: 12px;  /* Bordes redondeados */
+    padding: 30px;
+    width: 80%;          /* Ancho del 80% */
+    max-width: 1000px;   /* Ancho máximo de 1000px */
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.agrandar-post:hover {
-    transform: translateY(-1px);
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;   /* Centrado de los títulos */
 }
 
 .agrandar-post h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;      /* Tamaño de fuente más grande */
     font-weight: bold;
-    color: #444;
+    color: #333;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 5px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
     word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
 }
 
 .agrandar-post h4 {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: #666;
     font-style: italic;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
 }
 
 .agrandar-post p {
-    font-size: 1rem;
-    color: #333;
-    line-height: 1.5;
-    margin-bottom: 15px;
-    word-wrap: break-word; 
-    overflow-wrap: break-word;
-    white-space: normal; 
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    text-align: left; /* Alineación del texto a la izquierda */
+    word-wrap: break-word;
 }
 
 .agrandar-post small {
-    font-size: 0.8rem;
-    color: #777;
+    font-size: 0.9rem;
+    color: #888;
     font-style: italic;
 }
 
+.agrandar-post:hover {
+    /*transform: translateY(-5px); /* Efecto sutil al pasar el mouse */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Aumento de la sombra */
+}
