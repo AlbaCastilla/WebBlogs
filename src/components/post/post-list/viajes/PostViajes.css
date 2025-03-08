@@ -1,0 +1,77 @@
+.post-viajes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px; /* Espacio superior reducido */
+}
+
+.postViajes-list {
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px; /* Padding reducido */
+    width: 40%;
+    max-width: 600px;
+    margin-bottom: 10px; /* Menos espacio entre tarjetas */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* Para el posicionamiento del botón */
+}
+
+.postViajes-list:hover {
+    transform: translateY(-1px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.postViajes-list h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 3px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+.postViajes-list h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 5px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+.postViajes-list a {
+    font-size: 1rem;
+    line-height: 1.3;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.postViajes-list small {
+    font-size: 0.8rem;
+    color: #777;
+    font-style: italic;
+    margin-top: 3px;
+}
+
+.boton-like {
+    display: flex;
+    justify-content: center;
+    margin-top: -10px;
+    position: absolute;
+    bottom: 15px;
+    right: 30px;
+}
+
+.divBtnLike {
+    display: flex;
+    justify-content: right;
+    margin-top: 0px;
+}

@@ -1,0 +1,31 @@
+.contador-posts {
+  text-align: center;
+}
+
+.contador-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+  grid-template-rows: repeat(2, auto); /* Dos filas */
+  gap: 20px; /* Espacio entre tarjetas */
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.tarjeta-contador {
+  background: #f8f9fa;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  border: 2px solid #ddd;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta-contador:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}

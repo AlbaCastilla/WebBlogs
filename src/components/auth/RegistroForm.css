@@ -1,0 +1,82 @@
+.registro-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  color: #ffffff;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.48);
+}
+
+.registro-container h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.inputs {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+
+.input-email,
+.input-pass {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1rem;
+    transition: background 0.3s ease-in-out, border-color 0.3s;
+}
+
+.input-email::placeholder,
+.input-pass::placeholder {
+    color: #cbd5e1;
+}
+
+.input-email:focus,
+.input-pass:focus {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: #8190f8;
+    box-shadow: 0 0 8px rgba(129, 140, 248, 0.5);
+}
+
+.btn-registro {
+  width: 100%;
+  height: 50px;
+  background: #6babff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  margin-top: 1rem;
+}
+
+.btn-registro:hover {
+  background: #6697c6;
+}
+
+
+
+.error {
+  color: red;
+  font-size: 14px;
+}
