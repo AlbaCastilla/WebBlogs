@@ -171,6 +171,10 @@ function Perfil() {
     navigate("/login");
   };
 
+  const handlePostClick = (id) => {
+    navigate(`/post/${id}`);
+  };
+
   return (
     <div>
       <div className="titulo-perfil">
@@ -186,7 +190,7 @@ function Perfil() {
         ) : (
           <div className="favoritos-grid">
             {favoritos.map((post) => (
-              <div key={post.id} className="favorito-post tarjeta">
+              <div key={post.id} onClick={() => handlePostClick(post.id)} className="favorito-post tarjeta">
                 <h4>{post.titulo}</h4>
                 <p>{post.subtitulo}</p>
                 <small>
@@ -198,6 +202,8 @@ function Perfil() {
         )}
       </div>
 
+
+
 <div className="posts-publicados-div-grande">
       <h4>Mis Posts Publicados</h4>
       <div className="posts-publicados-container">
@@ -207,7 +213,7 @@ function Perfil() {
         ) : (
           <div className="posts-publicados-grid">
             {postsUsuario.map((post) => (
-              <div key={post.id} className="post-publicado tarjeta">
+              <div key={post.id} onClick={() => handlePostClick(post.id)} className="post-publicado tarjeta">
                 <h4>{post.titulo}</h4>
                 <p>{post.subtitulo}</p>
                 <small>

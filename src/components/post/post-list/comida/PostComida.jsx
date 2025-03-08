@@ -468,6 +468,10 @@ function PostComida() {
     }
   };
 
+  const handlePostClick = (id) => {
+    navigate(`/post/${id}`);
+  };
+
   if (loading || authLoading) {
     return <p>Cargando...</p>; // Mostrar cargando mientras se esperan los datos
   }
