@@ -94,7 +94,7 @@ const Login = () => {
     navigate('/'); // Redirigir al home
   };
 
-  return (
+return (
     <div>
       <h2 className='h2'>{isLogin ? '¡Inicia Sesión!' : '¡Crea una Cuenta!'}</h2>
       <p className='p'>{isLogin ? 'Accede a tu cuenta para continuar' : 'Llena los datos para registrarte'}</p>
@@ -104,7 +104,7 @@ const Login = () => {
       </div>
 
       <div className="registro-div">
-        <p>
+        <p className='link-registro-login'>
           {isLogin ? '¿No tienes cuenta? ' : '¿Ya tienes cuenta? '}
           <span onClick={() => setIsLogin(!isLogin)}>
             {isLogin ? '¡Regístrate!' : '¡Inicia sesión!'}
@@ -113,6 +113,8 @@ const Login = () => {
       </div>
     </div>
   );
-};
+}; 
+
+
 
 export default Login;

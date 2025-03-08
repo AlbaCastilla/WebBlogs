@@ -47,8 +47,9 @@
 // export default RegistroForm;
 
 import React, { useState } from 'react';
-import { auth } from '../../environments/environments.firebase'; 
+import { auth } from '../../environments/environments.firebase.ts';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import './RegistroForm.css';
 
 const RegistroForm = () => {
   const [email, setEmail] = useState('');
@@ -75,26 +76,33 @@ const RegistroForm = () => {
   };
 
   return (
-    <div className="registro-container">
-      <h3>Crear Cuenta</h3>
-      {error && <p className="error">{error}</p>}
-      <form onSubmit={handleRegistro}>
-        <input
-          type="email"
-          placeholder="Correo electrónico"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Contraseña"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit">Registrarse</button>
-      </form>
+    <div className="contenedor-global">
+
+      <div className="registro-container">
+        <h3>Crear Cuenta</h3>
+        {error && <p className="error">{error}</p>}
+        <form className='formulario' onSubmit={handleRegistro}>
+          <div className="inputs">
+            <input
+            className='input-email'
+              type="email"
+              placeholder="Correo electrónico"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <input
+            className='input-pass'
+              type="password"
+              placeholder="Contraseña"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <button className='btn-registro' type="submit">Registrarse</button>
+        </form>
+      </div>
     </div>
   );
 };

@@ -4,18 +4,19 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 10px; /* Reducido para menos espacio superior */
 }
 
 .postOtro-list {
     background: #f9f9f9;
     border-radius: 12px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 50%;
+    padding: 15px; /* Reducido el padding para menos espacio interno */
+    width: 40%;
     max-width: 600px;
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Reducido para menos espacio entre las tarjetas */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* Necesario para el posicionamiento absoluto del botón */
 }
 
 .postOtro-list:hover {
@@ -29,7 +30,7 @@
     color: #444;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 5px;
+    margin-bottom: 3px; /* Reducido margen inferior */
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: normal;
@@ -40,30 +41,37 @@
     font-weight: 600;
     color: #666;
     font-style: italic;
-    margin-bottom: 10px;
+    margin-bottom: 5px; /* Reducido margen inferior */
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: normal;
 }
 
-.postOtro-list p {
+.postOtro-list a {
     font-size: 1rem;
-    color: #333;
-    line-height: 1.5;
-    margin-bottom: 15px;
-    word-wrap: break-word; /* Permite que las palabras largas se dividan */
-    overflow-wrap: break-word; /* Asegura que el texto no se desborde */
-    white-space: normal; /* Evita que el texto quede en una sola línea */
+    line-height: 1.3; /* Reducido el line-height para menos espacio */
+    cursor: pointer;
+    margin-bottom: 5px; /* Añadido margen inferior para separar de otros elementos */
 }
 
 .postOtro-list small {
     font-size: 0.8rem;
     color: #777;
     font-style: italic;
+    margin-top: 3px; /* Reducido el margen superior */
 }
 
 .boton-like {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: -10px; /* Ajustado para acercar el botón al contenido */
+    position: absolute; /* Fijado el botón dentro de la tarjeta */
+    bottom: 15px; /* Posicionado en la parte inferior de la tarjeta */
+    right: 30px; /* Movido un poco más hacia la izquierda */
+}
+
+.divBtnLike {
+    display: flex;
+    justify-content: right;
+    margin-top: 0px; /* Eliminado el espacio entre los elementos */
 }
