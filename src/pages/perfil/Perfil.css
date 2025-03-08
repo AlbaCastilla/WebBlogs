@@ -44,10 +44,17 @@
 .favoritos-container {
     margin-top: 30px;
     padding: 20px;
-    background-color: #f9f9f9;
+    /*background-color: #f9f9f9;*/
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
     margin-bottom: 40px;
+    border-bottom: #2d3a3b 1px solid;
+    border-top:  #2d3a3b 1px solid;
+}
+.posts-publicados-div-grande{
+    border-bottom: #2d3a3b 1px solid;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 /* Estilos de la grilla de favoritos */
@@ -95,7 +102,7 @@ small {
 
 /* Estilo del botón de Logout */
 button {
-    background-color:  #404040;
+    background-color:  #983535;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -110,3 +117,25 @@ button {
 button:hover {
     background-color: #404040;
 }
+
+.posts-publicados-container {
+    width: 60%;                  /* El contenedor ocupa el 60% del ancho de la pantalla */
+    margin: 0 auto;              /* Centra el contenedor horizontalmente */
+  }
+  
+  .post-publicado {
+    border: 1px solid #d3d3d3;  /* Borde gris claro */
+    padding: 10px;              /* Espaciado interno */
+    margin-bottom: 10px;        /* Separación entre los posts */
+    border-radius: 5px;         /* Bordes redondeados (opcional) */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra ligera para dar profundidad (opcional) */
+  }
+  
+  .post-publicado h4 {
+    margin-bottom: 8px; /* Espaciado entre el título y el contenido */
+  }
+  
+  .post-publicado small {
+    color: #777; /* Color gris claro para la fecha */
+  }
+  
