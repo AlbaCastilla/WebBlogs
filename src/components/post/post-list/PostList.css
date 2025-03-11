@@ -1,0 +1,74 @@
+.post-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  max-width: 2000px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+
+}
+
+.titulo-h2 {
+  margin-bottom: 20px;
+}
+
+.titulo-h2 h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.post-wrapper {
+  display: grid;             /* Usamos grid para organizar los posts */
+  grid-template-columns: repeat(2, 1fr);  /* 2 columnas de igual tamaño */
+  gap: 20px;                /* Espacio entre los posts */
+  width: 100%;
+}
+
+.post-list {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.post-list:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.post-list h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.post-list h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #666;
+  font-style: italic;
+  margin-bottom: 12px;
+}
+
+.post-list small {
+  font-size: 0.9rem;
+  color: #777;
+  font-style: italic;
+}
+
+.post-list p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}

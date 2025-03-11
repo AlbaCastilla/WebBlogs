@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <p>&copy; 2025 My Website. All rights reserved.</p>
+        <p>&copy; 2025 Beatriz Moreno, Alba Castilla y Pedro Martinez.</p>
         <div className="social-links">
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">Facebook</a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon">Twitter</a>

@@ -1,0 +1,45 @@
+.fondo-comida {
+  background-image: url("../../img/imagenComida.avif");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+}
+
+.fondo-blanco {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/*.fondo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 1; 
+}*/
+
+.fondo > * {
+  position: relative;
+  z-index: 2;
+}
+
+.titulo-comida h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.descripcion-comida p {
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-align: center;
+  color: #3d3d3d; /* Un tono gris para no competir con el título */
+  letter-spacing: 1px;
+  margin-top: 5px; /* Espacio entre título y subtítulo */
+  font-style: italic;
+}

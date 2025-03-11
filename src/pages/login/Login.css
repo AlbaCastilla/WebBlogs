@@ -1,0 +1,54 @@
+/* Estilo para el contenedor del formulario */
+.form-div {
+  display: none;
+}
+
+.show-login {
+  display: block;
+}
+
+.show-register {
+  display: block;
+}
+
+/* Estilo adicional para el span */
+.registro-div span {
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.registro-div span:hover {
+  color: darkblue;
+}
+
+.registro-div {
+  position: absolute; 
+  bottom: 170px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20%;
+  background: linear-gradient(to right, #cfcedc, #b1afec);
+  padding: 1rem;
+  border-radius: 8px;
+  color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.link-registro-login {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+
+}
+
+.link-registro-login span {
+  color: #7d7d7d;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.link-registro-login span:hover {
+  color: #ffaa00;
+}

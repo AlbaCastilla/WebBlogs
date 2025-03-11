@@ -1,0 +1,45 @@
+.post {
+    background-color: #333333;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 750px;
+    width: 100%;
+    margin: 40px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.titulo-editable, 
+.editable {
+    min-height: 40px;
+    padding: 8px;
+    font-size: 1.5rem;
+    color: white;
+    outline: none; /* Evita el borde al hacer clic */
+    border: none;
+    background-color: transparent;
+    caret-color: rgb(179, 185, 205);
+    white-space: pre-wrap;
+    position: relative;
+}
+
+.subtitulo-editable{
+
+    padding: 8px;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: lighter;
+    color: white;
+    outline: none; /* Evita el borde al hacer clic */
+    border: none;
+}
+
+.editable {
+    font-size: 1.2rem;
+}
+[contentEditable]:empty:before {
+    content: attr(data-placeholder);
+    color: gray;
+    position: absolute;
+    pointer-events: none;
+    font-weight: 600;
+} 
