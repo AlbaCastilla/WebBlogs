@@ -22,7 +22,7 @@ const Home = () => {
           <img src={imagenFondo2} alt="Descripción" className="descripcion-imagen" />
           <div className="descripcion-titulo">
             <h2>¿De qué trata esta página?</h2>
-            <p>Este es un sitio donde los usuarios pueden compartir sus blogs, descubrir nuevas historias y conectar con otros escritores. Esto es para comprobar como de bonito queda el texto en el contenedor porque para mí parece que está todo gigante.</p>
+            <p>Un espacio donde escritores comparten sus historias, descubren nuevas perspectivas y se conectan con otros apasionados por la escritura.Explora, escribe y comparte tu voz en una comunidad hecha para los amantes de las palabras.</p>
           </div>
         </div>
 
