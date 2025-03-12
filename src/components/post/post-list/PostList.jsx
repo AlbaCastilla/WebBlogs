@@ -4,14 +4,12 @@ import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
 import { useNavigate } from 'react-router-dom';
 import "./PostList.css";
 
-/* Lo iniciamos vacío, ya que al principio no hay posts. Los cargamos con 
-setPosts --> useState para actualizar el estado en el que se encuentran estos */
+
 const PostList = () => {
   const [posts, setPosts] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Obtener los últimos 4 posts al cargar el componente
     const obtenerPosts = async () => {
       const querySnapshot = await getDocs(
         query(collection(db, "posts"), orderBy("fechaCreacion", "desc"), limit(4))

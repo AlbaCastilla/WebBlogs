@@ -57,17 +57,16 @@ import React, { useEffect, useState } from "react";
 import { db } from "../../../../firebase";
 import { collection, getDocs, addDoc, query, where, deleteDoc, doc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from '../../../../context/AuthContext'; // Importa el hook useAuth
+import { useAuth } from '../../../../context/AuthContext';
 import "./PostViajes.css";
 import BotonLike from "../../boton-like/BotonLike";
 
 function PostViajes() {
     const [posts, setPosts] = useState([]);
-    const { user, loading: authLoading } = useAuth(); // Usar el user desde el contexto de autenticación
-    const [loading, setLoading] = useState(true); // Para manejar el estado de carga de los posts
+    const { user, loading: authLoading } = useAuth();
+    const [loading, setLoading] = useState(true);
     const navigate = useNavigate(); 
 
-    // Obtener los posts desde Firestore
     useEffect(() => {
         const obtenerPosts = async () => {
             try {
@@ -77,22 +76,20 @@ function PostViajes() {
                         id: doc.id,
                         ...doc.data(),
                     }))
-                    .filter((post) => post.seccion === "viajes"); // Filtrar por sección "viajes"
-
+                    .filter((post) => post.seccion === "viajes");
                 console.log("Posts cargados:", postsArray);
                 setPosts(postsArray);
             } catch (error) {
                 console.error("Error obteniendo posts:", error);
             }
-            setLoading(false); // Después de cargar los posts, dejar de cargar
+            setLoading(false); 
         };
 
         obtenerPosts();
     }, []);
 
-    // Verificar si el post está en favoritos
     const isPostFavorito = async (postId) => {
-        if (!user) return false; // Si no hay usuario, no puede tener favoritos
+        if (!user) return false; 
 
         const favoritosQuery = query(
             collection(db, "favoritos"),
@@ -101,22 +98,20 @@ function PostViajes() {
         );
 
         const querySnapshot = await getDocs(favoritosQuery);
-        return !querySnapshot.empty; // Si la consulta no está vacía, significa que el post está en favoritos
+        return !querySnapshot.empty;
     };
 
-    // Manejar el "like" y agregar o eliminar de favoritos
     const handleLikeClick = async (postId) => {
         if (!user) {
             alert("Debes estar logueado para guardar en favoritos.");
-            navigate("/login"); // Redirigir a la página de login si no hay usuario
+            navigate("/login"); 
             return;
         }
 
         try {
-            const postFavorito = await isPostFavorito(postId); // Verificar si el post ya está en favoritos
+            const postFavorito = await isPostFavorito(postId); 
 
             if (postFavorito) {
-                // Si el post ya está en favoritos, eliminarlo
                 const favoritosQuery = query(
                     collection(db, "favoritos"),
                     where("userId", "==", user.uid),
@@ -128,15 +123,13 @@ function PostViajes() {
                 await deleteDoc(doc(db, "favoritos", docToDelete.id));
                 alert("Post eliminado de favoritos.");
             } else {
-                // Si el post no está en favoritos, agregarlo
                 await addDoc(collection(db, "favoritos"), {
-                    userId: user.uid, // ID del usuario
-                    postId: postId, // ID del post
+                    userId: user.uid, 
+                    postId: postId, 
                 });
                 alert("Post agregado a favoritos.");
             }
 
-            // Recargar los posts para actualizar la interfaz
             const querySnapshot = await getDocs(collection(db, "posts"));
             const postsArray = querySnapshot.docs
                 .map((doc) => ({
@@ -145,7 +138,7 @@ function PostViajes() {
                 }))
                 .filter((post) => post.seccion === "viajes");
 
-            setPosts(postsArray); // Actualiza los posts con los nuevos datos
+            setPosts(postsArray); 
         } catch (error) {
             console.error("Error al manejar el like:", error);
         }
@@ -156,7 +149,7 @@ function PostViajes() {
     };
 
     if (loading || authLoading) {
-        return <p>Cargando...</p>; // Mostrar cargando mientras se esperan los datos
+        return <p>Cargando...</p>; 
     }
 
     return (
@@ -171,7 +164,6 @@ function PostViajes() {
                         <a onClick={() => handlePostClick(post.id)}>Ver más</a><br />
                         <small>{new Date(post.fechaCreacion?.seconds * 1000).toLocaleString()}</small>
                         <div>
-                            {/* El botón de like se renderiza siempre, pero solo se ejecuta si el usuario está autenticado */}
                             <BotonLike postId={post.id} onLikeClick={handleLikeClick} />
                         </div>
                     </div>

@@ -13,7 +13,7 @@
     min-height: 40px;
     padding: 8px;
     font-size: 1.5rem;
-    color: white;
+    color: gray;
     outline: none; /* Evita el borde al hacer clic */
     border: none;
     background-color: transparent;
@@ -23,19 +23,20 @@
 }
 
 .subtitulo-editable{
-
     padding: 8px;
     font-size: 1rem;
     font-style: italic;
     font-weight: lighter;
-    color: white;
+    color: gray;
     outline: none; /* Evita el borde al hacer clic */
     border: none;
 }
 
 .editable {
     font-size: 1.2rem;
+    color: gray !important;
 }
+
 [contentEditable]:empty:before {
     content: attr(data-placeholder);
     color: gray;
