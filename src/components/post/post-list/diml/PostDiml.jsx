@@ -118,7 +118,6 @@ function Diml() {
       const postFavorito = await isPostFavorito(postId); // Verificar si el post ya está en favoritos
 
       if (postFavorito) {
-        // Si el post ya está en favoritos, eliminarlo
         const favoritosQuery = query(
           collection(db, "favoritos"),
           where("userId", "==", user.uid),

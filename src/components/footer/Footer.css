@@ -1,9 +1,10 @@
 .footer {
-    background-color: #404040;
+    background-color: #f7f7f7;
     color: #ecf0f1;
     text-align: center;
     padding: 20px 0;
     position: relative;
+    border: 1px solid #e0e0e0;
     bottom: 0;
     width: 100%; /* Asegura que el footer ocupe todo el ancho */
     box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
@@ -20,7 +21,7 @@
   }
   
   .social-icon {
-    color: #ecf0f1;
+    color: black;
     margin: 0 10px;
     text-decoration: none;
     font-size: 16px;
