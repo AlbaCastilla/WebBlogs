@@ -4,9 +4,9 @@
 
 .contador-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Dos columnas */
-  grid-template-rows: repeat(2, auto); /* Dos filas */
-  gap: 20px; /* Espacio entre tarjetas */
+  grid-template-columns: repeat(2, 1fr); 
+  grid-template-rows: repeat(2, auto); 
+  gap: 20px; 
   justify-content: center;
   align-items: center;
   margin-top: 20px;

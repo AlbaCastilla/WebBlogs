@@ -5,7 +5,7 @@ import { doc, getDoc } from "firebase/firestore";
 import "./AgrandarPostOtro.css";
 
 function AgrandarPost() {
-    const { id } = useParams(); // Obtiene el id de la URL
+    const { id } = useParams(); 
     const [post, setPost] = useState(null);
 
     useEffect(() => {

@@ -63,7 +63,7 @@ function ContadorPost() {
       <h2>Contadores de los Posts</h2>
       <div className="contador-grid">
         <div className="tarjeta-contador">Total de Posts de Viajes: {totalPostsViajes}</div>
-        <div className="tarjeta-contador">Total de Posts de Comida: {totalPostsComida}</div>
+        <div className="tarjeta-contador">Total de Posts Comida: {totalPostsComida}</div>
         <div className="tarjeta-contador">Total de Posts de Diml: {totalPostsDiml}</div>
         <div className="tarjeta-contador">Total de Posts de Otro: {totalPostsOtro}</div>
       </div>

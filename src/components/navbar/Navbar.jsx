@@ -55,7 +55,7 @@ const Navbar = () => {
   return (
     <nav>
       <div className="logo">
-        <img src="/assets/Logo64x64.png" alt="logo" />
+        
         <h1>Blog de blogs</h1>
       </div>
       <ul>

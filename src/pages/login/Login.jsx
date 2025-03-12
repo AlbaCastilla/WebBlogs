@@ -96,9 +96,7 @@ const Login = () => {
 
 return (
     <div>
-      <h2 className='h2'>{isLogin ? '¡Inicia Sesión!' : '¡Crea una Cuenta!'}</h2>
-      <p className='p'>{isLogin ? 'Accede a tu cuenta para continuar' : 'Llena los datos para registrarte'}</p>
-      
+     
       <div className={`form-div ${isLogin ? 'show-login' : 'show-register'}`}>
         {isLogin ? <LoginForm onLogin={handleAuthChange} /> : <RegistroForm />}
       </div>
@@ -110,6 +108,9 @@ return (
             {isLogin ? '¡Regístrate!' : '¡Inicia sesión!'}
           </span>
         </p>
+      </div>
+      <div className='vacio'>
+
       </div>
     </div>
   );

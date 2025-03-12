@@ -1,15 +1,18 @@
 .h2 {
+    font-size: 2rem;
     font-weight: bold;
     text-align: center;
     color: #444;
     text-transform: uppercase;
-    font-size: 2rem;
-    margin-top: 20px;
+    letter-spacing: 4px;
 }
 
 .p {
+    font-size: 0.8rem;
+    font-weight: 400;
     text-align: center;
-    color: #666;
-    font-size: 1rem;
-    margin-bottom: 20px;
+    color: #3d3d3d; /* Un tono gris para no competir con el título */
+    letter-spacing: 1px;
+    margin-top: 5px; /* Espacio entre título y subtítulo */
+    font-style: italic;
 }
