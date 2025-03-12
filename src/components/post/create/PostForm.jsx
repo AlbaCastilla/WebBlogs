@@ -189,7 +189,7 @@
 import React, { useState, useEffect } from 'react';
 import { db } from "../../../firebase";
 import { collection, addDoc, serverTimestamp, getDocs } from "firebase/firestore";
-import { getAuth } from 'firebase/auth'; // Importar getAuth
+import { getAuth } from 'firebase/auth'; 
 import './Post.css';
 
 const Post = () => {
@@ -198,16 +198,15 @@ const Post = () => {
   const [texto, setTexto] = useState('');
   const [secciones, setSecciones] = useState([]);
   const [seccionSeleccionada, setSeccionSeleccionada] = useState('');
-  const [usuario, setUsuario] = useState(null); // Estado para el usuario logueado
+  const [usuario, setUsuario] = useState(null); 
 
   useEffect(() => {
-    // Obtener las secciones desde Firebase Firestore
     const obtenerSecciones = async () => {
       try {
         const querySnapshot = await getDocs(collection(db, "secciones"));
         const listaSecciones = querySnapshot.docs.map(doc => ({
           id: doc.id, 
-          nombre: doc.data().seccion // Asegura que usas el campo correcto
+          nombre: doc.data().seccion 
         }));
         setSecciones(listaSecciones);
       } catch (error) {
@@ -215,11 +214,10 @@ const Post = () => {
       }
     };
 
-    // Obtener el usuario logueado
     const auth = getAuth();
     const usuarioLogueado = auth.currentUser;
     if (usuarioLogueado) {
-      setUsuario(usuarioLogueado); // Almacenar el usuario logueado
+      setUsuario(usuarioLogueado); 
     }
 
     obtenerSecciones();
@@ -235,7 +233,6 @@ const Post = () => {
       return;
     }
 
-    // Verificar que el usuario esté logueado antes de guardar el post
     if (!usuario) {
       alert("Debes iniciar sesión para publicar un post");
       return;
@@ -247,7 +244,7 @@ const Post = () => {
         subtitulo,
         texto,
         seccion: seccionSeleccionada,
-        usuario: usuario.uid, // Agregar el ID del usuario logueado
+        usuario: usuario.uid, 
         fechaCreacion: serverTimestamp()
       });
 

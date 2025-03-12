@@ -27,11 +27,10 @@ import React, { useState } from 'react';
 import './BotonLike.css';
 
 function BotonLike({ postId, onLikeClick }) {
-  const [liked, setLiked] = useState(false); // Para manejar el estado del like
-  
+  const [liked, setLiked] = useState(false); 
   const handleLike = () => {
     setLiked(!liked);
-    onLikeClick(postId);  // Llamar a la función de guardar el post en favoritos
+    onLikeClick(postId);  
   };
 
   return (

@@ -1,21 +1,20 @@
 import React, { useState } from 'react'; 
-import { db } from "../../firebase"; //importamos Firestore desde firebase.js
+import { db } from "../../firebase"; 
 import { collection, addDoc, serverTimestamp } from "firebase/firestore"; 
-import { useAuth } from '../../context/AuthContext'; // Importamos el hook de autenticación
-import { useNavigate } from 'react-router-dom'; // Importamos useNavigate
+import { useAuth } from '../../context/AuthContext'; 
+import { useNavigate } from 'react-router-dom'; 
 import './Post.css';
 
 const Post = () => {
-  const { isAuthenticated } = useAuth(); // Usamos el hook de autenticación para saber si el usuario está logueado
+  const { isAuthenticated } = useAuth(); 
   const [titulo, setTitulo] = useState('');
   const [subtitulo, setSubtitulo] = useState('');
-  const [texto, setTexto] = useState(''); //comienza vacio - sin valor
-  const navigate = useNavigate(); // Navegación
+  const [texto, setTexto] = useState(''); 
+  const navigate = useNavigate(); 
 
   if (!isAuthenticated) {
-    // Si no está autenticado, redirigimos a la página de login
     navigate('/login');
-    return null; // No renderizamos nada mientras redirige
+    return null; 
   }
 
   const handleTitleInput = (e) => {
@@ -37,17 +36,15 @@ const Post = () => {
     }
 
     try {
-      // Guardamos el post en Firebase
       await addDoc(collection(db, "posts"), {
         titulo,
         subtitulo,
         texto,
-        fechaCreacion: serverTimestamp() // Guardar la fecha de creación
+        fechaCreacion: serverTimestamp() 
       });
 
       alert("Post guardado en Firebase!");
 
-      // Limpiamos los campos después de guardar
       setTitulo("");
       setSubtitulo("");
       setTexto("");
