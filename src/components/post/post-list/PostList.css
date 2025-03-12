@@ -9,11 +9,11 @@
   padding: 20px;
   background-color: #ffffff;
   border-radius: 12px;
-
 }
 
 .titulo-h2 {
   margin-bottom: 20px;
+  margin-top: -2%;
 }
 
 .titulo-h2 h2 {
@@ -37,6 +37,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 
