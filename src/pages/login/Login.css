@@ -43,6 +43,10 @@
 
 }
 
+.vacio {
+  margin-bottom: 0%;
+}
+
 .link-registro-login span {
   color: #7d7d7d;
   cursor: pointer;
