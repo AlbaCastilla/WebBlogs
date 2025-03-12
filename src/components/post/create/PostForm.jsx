@@ -298,7 +298,7 @@ const Post = () => {
         ))}
       </select>
 
-      <button type="submit" onClick={guardarPost}>Publicar</button>
+      <button className='boton-Publicar' type="submit" onClick={guardarPost}>Publicar</button>
     </div>
   );
 };
